@@ -4,17 +4,25 @@
 
 int main(void) {
   
-  int bin1,bin2,res, i, dec1 = 0, dec2 = 0;
+//=================================VARIÁVEIS=========================================
+  int bin1; 
+  int bin2; 
+  int res; 
+  int i;
+  int dec1 = 0; 
+  int dec2 = 0;
+  int resto[10];
+//====================================================================================
 
-  printf("\nSUBTRAÇÃO DE NÚMEROS BINARIOS\n");
+  printf("\nSUBTRAÇÃO DE NÚMEROS BINÁRIOS\n");
 
-  printf("\nDigite o primeiro número binario: ");
+  printf("\nDigite o primeiro número binário: ");
   scanf("%d", &bin1);
 
-  printf("\nDigite o segundo número binario: ");
+  printf("\nDigite o segundo número binário: ");
   scanf("%d", &bin2);
 
-  printf("\nos numeros foram: %d e %d", bin1,bin2);
+  printf("\nOs números foram: %d e %d", bin1,bin2);
 
       for(i = 0; bin1 > 0; i++)
     {
@@ -29,7 +37,19 @@ int main(void) {
     }    
 
     res = dec1 - dec2;
+    
+    for (i = 0; res > 0; i++)
+    {    
+        resto[i] = res % 2;    
+        res = res / 2;  
+    } 
+    
+        printf("\nO RESULTADO DA SUBTRAÇÃO É: ");
 
-    printf("\na soma dos numeros decimais é: %d", res);
+    for (i = i -1; i >= 0 ; i--)
+    {    
+        printf("%d", resto[i]);
+    }  
+
     return 0;
 }
